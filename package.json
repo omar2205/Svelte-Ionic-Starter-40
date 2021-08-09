@@ -10,6 +10,7 @@
     "build:ios": "run-s build:app cap-run:ios",
     "#Platform: Sync": "These build the application for their specific platforms",
     "cap-run:android": "cap sync android && cap open android",
+    "cap-sync:android": "cap sync android",
     "cap-run:ios": "cap sync ios && cap open ios",
     "#Dev: Platform": "These enable HMR (Hot module reloading) directly on the device - please check the readme.md for more on this.",
     "dev:ios": "run-p dev:start cap-run:ios",
