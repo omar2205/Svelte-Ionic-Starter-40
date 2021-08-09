@@ -21,7 +21,7 @@
 
 <div class="main">
   <h5>Welcome to <br/><br/><h3>Svelte with <br/>Ionic + Capacitor!</h3></h5>
-  <h1><pre>BAT    {bat * 100}%</pre></h1>
+  <h1><pre>BAT    {bat.batteryLevel * 100}%</pre></h1>
   <ion-button on:click={showModal}>Open Modal</ion-button>
 </div>
 
