@@ -18,7 +18,7 @@ jobs:
       - name: Install Node Packages & add cap/android
         run: npm i && npx cap add android
       - name: Build App
-        run: npm run build:app && cap sync android
+        run: npm run build:app && npm run cap-sync:android
       - name: Setup JDK
         uses: actions/setup-java@v1
         with:
