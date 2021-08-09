@@ -43,6 +43,10 @@
     "@capacitor/cli": "^3.0.0",
     "@capacitor/core": "^3.0.0",
     "@capacitor/ios": "^3.0.1",
-    "@ionic/core": "^5.6.13"
+    "@ionic-native/battery-status": "^5.35.0",
+    "@ionic-native/core": "^5.35.0",
+    "@ionic/core": "^5.6.13",
+    "cordova-plugin-battery-status": "^2.0.3",
+    "rxjs": "^7.3.0"
   }
 }
