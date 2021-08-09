@@ -37,16 +37,16 @@ jobs:
     name: Release APK
     needs: apk
     runs-on: ubuntu-latest
-      steps:
-        - name: Download APK artifact
-          uses: actions/download-artifact@v1
-          with:
-            name: apk
-        - name: Create Release
-          id: create_release
-          uses: actions/create-release@v1
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          with:
-            tag_name: ${{ github.ref }}
-            release_name: Release ${{ github.ref }} 
+    steps:
+      - name: Download APK artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: apk
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }} 
