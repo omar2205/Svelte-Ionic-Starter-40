@@ -1,27 +1,46 @@
 <script>
   import { IonicShowModal } from "@utils/IonicHelper";
-  import Modal from "@components/Modal.wc.svelte"
-  import { Device } from '@capacitor/device'
-  import {onMount} from 'svelte'
-  let bat
+  import Modal from "@components/Modal.wc.svelte";
+  import { Device } from "@capacitor/device";
+  import { App } from "@capacitor/app";
+  import { BackgroundTask } from "@robingenz/capacitor-background-task";
+
+  import { onMount } from "svelte";
+  let bat;
+  let i = 0;
   const logBatteryInfo = async () => {
-    bat = await Device.getBatteryInfo()
-  }
+    let b = await Device.getBatteryInfo();
+    bat = (await b.batteryLevel) * 100;
+  };
   onMount(() => {
-    logBatteryInfo()
-  })
+    logBatteryInfo();
+    App.addListener("appStateChange", async ({ isActive }) => {
+      if (isActive) {
+        return;
+      }
+      // The app state has been changed to inactive.
+      // Start the background task by calling `beforeExit`.
+      const taskId = await BackgroundTask.beforeExit(async () => {
+        setInterval(() => {
+          i++;
+        }, 1000);
+        // BackgroundTask.finish({ taskId });
+      });
+    });
+  });
   const showModal = () => {
     IonicShowModal("modal-extra", Modal, {
       firstName: "Douglas",
       lastName: "Adams",
-      middleInitial: "N",
+      middleInitial: "N"
     }).then(console.log);
   };
 </script>
 
 <div class="main">
   <h5>Welcome to <br/><br/><h3>Svelte with <br/>Ionic + Capacitor!</h3></h5>
-  <h1><pre>BAT    {bat.batteryLevel * 100}%</pre></h1>
+  <h1><pre>BAT    <b>{bat}%</b></pre></h1>
+  {i}
   <ion-button on:click={showModal}>Open Modal</ion-button>
 </div>
 
