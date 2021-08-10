@@ -1,6 +1,6 @@
 {
-  "appId": "com.svelte.capacitor",
-  "appName": "Svelte Capacitor",
+  "appId": "nl.oskr.bat3000",
+  "appName": "Bat3000",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "public",
@@ -11,6 +11,6 @@
   },
   "cordova": {},
   "server": {
-      "cleartext": true
+    "cleartext": true
   }
 }

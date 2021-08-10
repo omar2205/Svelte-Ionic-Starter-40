@@ -1,8 +1,18 @@
 <script>
-  import { BackgroundMode } from "@ionic-native/background-mode";
   import { onMount } from "svelte";
+  import { BackgroundMode } from "@ionic-native/background-mode";
+  import { Http } from "@capacitor-community/http";
   let i = 0;
   let x = "loading...";
+  // Example of a GET request
+  const doGet = async () => {
+    const options = {
+      url: "http://rate.sx/1eth"
+    };
+
+    const res = await Http.get(options);
+    x = await res.data;
+  };
   onMount(() => {
     BackgroundMode.enable(true);
     setInterval(() => {
@@ -12,12 +22,12 @@
       if (i > 14 && i < 16) BackgroundMode.moveToForeground();
       if (i > 20 && i < 22) window.plugins.bringtofront();
     }, 500);
-    fetch("http://rate.sx/1eth");
+    doGet();
   });
 </script>
 <div class="main">
   <h1>Background mode</h1>
   {i}<br/>
   <pre>{JSON.stringify(BackgroundMode.isActive(), null, 2)}</pre>
-  <pre>{JSON.stringify(x.toFixed(2), null, 2)}</pre>
+  <pre>{JSON.stringify(x, null, 2)}</pre>
 </div>s
