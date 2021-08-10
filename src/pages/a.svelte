@@ -9,9 +9,11 @@
       i++;
     }, 1000);
     setInterval(() => {
-      if (i > 20 && i < 25) BackgroundMode.moveToForeground();
+      if (i > 14 && i < 16) BackgroundMode.moveToForeground();
+      if (i > 20 && i < 22) window.plugins.bringtofront();
     }, 500);
     console.log(BackgroundMode);
+    console.log(b);
   });
 </script>
 <div class="main">

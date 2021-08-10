@@ -51,6 +51,7 @@
     "@ionic/core": "^5.6.13",
     "@robingenz/capacitor-background-task": "^1.0.0",
     "cordova-plugin-background-mode": "^0.7.3",
+    "cordova-plugin-bring-to-front": "0.0.3",
     "rxjs": "^6.5.0"
   }
 }
