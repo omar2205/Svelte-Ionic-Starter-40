@@ -13,7 +13,6 @@
       if (i > 20 && i < 22) window.plugins.bringtofront();
     }, 500);
     console.log(BackgroundMode);
-    console.log(b);
   });
 </script>
 <div class="main">
