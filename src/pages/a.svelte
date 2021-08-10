@@ -1,4 +1,5 @@
 <script>
+  const BACKEND_API = "http://192.168.1.99:9000";
   import { onMount } from "svelte";
   import { BackgroundMode } from "@ionic-native/background-mode";
   import { Http } from "@capacitor-community/http";
@@ -7,7 +8,7 @@
   // Example of a GET request
   const doGet = async () => {
     const options = {
-      url: "http://rate.sx/1eth"
+      url: `${BACKEND_API}/try.txt`
     };
 
     const res = await Http.get(options);
@@ -30,4 +31,4 @@
   {i}<br/>
   <pre>{JSON.stringify(BackgroundMode.isActive(), null, 2)}</pre>
   <pre>{JSON.stringify(x, null, 2)}</pre>
-</div>s
+</div>
