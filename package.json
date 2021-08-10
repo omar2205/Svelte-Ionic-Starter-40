@@ -46,7 +46,11 @@
     "@capacitor/device": "^1.0.2",
     "@capacitor/ios": "^3.0.1",
     "@capacitor/toast": "^1.0.2",
+    "@ionic-native/background-mode": "^5.35.0",
+    "@ionic-native/core": "^5.35.0",
     "@ionic/core": "^5.6.13",
-    "@robingenz/capacitor-background-task": "^1.0.0"
+    "@robingenz/capacitor-background-task": "^1.0.0",
+    "cordova-plugin-background-mode": "^0.7.3",
+    "rxjs": "^7.3.0"
   }
 }

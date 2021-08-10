@@ -1,23 +1,13 @@
 <script>
-import { Device } from '@capacitor/device';
-import {onMount} from 'svelte'
-const logDeviceInfo = async () => {
-  const info = await Device.getInfo();
-
-  console.log(info);
-};
-
-let info
-const logBatteryInfo = async () => {
-  info = await Device.getBatteryInfo();
-
-  console.log(info);
-};
-onMount(() => {
-  logDeviceInfo()
-  logBatteryInfo()
-})
+  import { BackgroundMode } from "@ionic-native/background-mode";
+  import { onMount } from "svelte";
+  onMount(() => {
+    console.log(BackgroundMode);
+    BackgroundMode.enable(true);
+    console.log(BackgroundMode);
+  });
 </script>
 <div class="main">
-<h1>B: {info}</h1>
+  <h1>Background mode</h1>
+  <pre>{JSON.stringify(BackgroundMode.isActive(), null, 2)}</pre>
 </div>

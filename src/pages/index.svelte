@@ -5,7 +5,7 @@
   import { App } from "@capacitor/app";
   import { Toast } from "@capacitor/toast";
   import { BackgroundTask } from "@robingenz/capacitor-background-task";
-
+  import { url } from "@roxi/routify";
   import { onMount } from "svelte";
   let bat;
   let i = 0;
@@ -47,6 +47,7 @@
   <h1><pre>BAT    <b>{bat}%</b></pre></h1>
   {i}<br/>
   <ion-button expand="block" on:click={showModal}>Open Modal</ion-button>
+  <ion-button expand="block" href={$url('/a')}>Go To a</ion-button>
 </div>
 
 <style>
