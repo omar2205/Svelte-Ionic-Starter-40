@@ -3,7 +3,7 @@
 	import { routes } from "../.routify/routes";
 </script>
 
-  <ion-app>
+  <ion-app mode="ios">
     <ion-header translucent>
       <ion-toolbar>
         <ion-title>Battery N30</ion-title>

@@ -11,7 +11,7 @@
   let i = 0;
   const logBatteryInfo = async () => {
     let b = await Device.getBatteryInfo();
-    bat = ((await b.batteryLevel) * 100).toFixed(2);
+    bat = parseInt((await b.batteryLevel) * 100);
     await Toast.show({
       text: "Hey"
     });
@@ -46,8 +46,8 @@
   <h5>Welcome to <br/><br/><h3>Svelte with <br/>Ionic + Capacitor!</h3></h5>
   <h1><pre>BAT    <b>{bat}%</b></pre></h1>
   {i}<br/>
-  <ion-button expand="block" on:click={showModal}>Open Modal</ion-button>
-  <ion-button expand="block" href={$url('/a')}>Go To a</ion-button>
+  <ion-button mode="md" expand="block" on:click={showModal}>Open Modal</ion-button>
+  <ion-button mode="md" expand="block" href={$url('/a')}>Go To a</ion-button>
 </div>
 
 <style>
